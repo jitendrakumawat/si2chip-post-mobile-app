@@ -1,0 +1,28 @@
+ <ion-header-bar class="bar-stable">
+        <h1 class="title">Login</h1>
+      </ion-header-bar>
+           <ion-view view-title="Login" >
+            <ion-content class="padding" >
+                <div class="list list-inset">
+                  <form name="loginForm" novalidate>
+                    <label class="item item-input">
+                    
+                      <input type="email" name="email"  placeholder="Email" ng-model="username" ng-minlength="5">                    </label> 
+                     <label class="item item-input">
+                       
+                         <input type="password" name="password" placeholder="password" ng-model="password" ng-minlength="3">
+                     </label>
+                  </form>  
+          
+          </ion-view>
+      <div class="padding">
+       <p ng-show="loginForm.email.$error.required">username is required</p>
+       <p ng-show="loginForm.email.$invalid && !loginForm.email.$pristine"> Email should be a valid email </p>
+       <p ng-show="loginForm.email.$error.minlength">Email must be of 20 charactor </p>
+       <p ng-show="loginForm.password.$error.required">password is required</p>
+       <p ng-show="loginForm.password.$error.minlength">password must be minlength of 5 charactor </p>
+      </div>
+      <div class="padding">
+        <button class="button button-block button-assertive" ng-disabled="loginForm.$invalid" ng-click="login()" >Submit</button>        
+      </div>    
+      </ion-content>

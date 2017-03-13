@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title></title>
+
+    <link rel="manifest" href="manifest.json">
+
+    <!-- un-comment this code to enable service worker
+    <script>
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('service-worker.js')
+          .then(() => console.log('service worker installed'))
+          .catch(err => console.log('Error', err));
+      }
+    </script>-->
+
+    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+    <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
+    <link href="css/ionic.app.css" rel="stylesheet">
+    -->
+
+    <!-- ionic/angularjs js -->
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+
+    <!-- cordova script (this will be a 404 during development) -->
+    <script src="cordova.js"></script>
+
+    <!-- your app's js -->
+    <script src="js/app.js"></script>
+  </head>
+  <body ng-app="starter" class="platform-android platform-cordova platform-webview">
+
+    <ion-pane>
+      <ion-header-bar class="bar-stable">
+        <h1 class="title">post</h1>
+      </ion-header-bar>
+           <ion-view view-title="Login" >
+            <ion-content class="padding" ng-controller="loginController">
+                <div class="list list-inset">
+                  <form name="loginForm" novalidate>
+                    <label class="item item-input">
+                    
+                      <input type="email" name="email" ng-change="loadUserGroups($event)" placeholder="Email" ng-model="username" ng-minlength="5">                    </label> 
+                     <label class="item item-input">
+                       
+                         <input type="password" name="password" placeholder="password" ng-model="password" ng-minlength="3">
+                     </label>
+                  </form>  
+          
+          </ion-view>
+      <div class="padding">
+       <p ng-show="loginForm.email.$error.required">username is required</p>
+       <p ng-show="loginForm.email.$invalid && !loginForm.email.$pristine"> Email should be a valid email </p>
+       <p ng-show="loginForm.email.$error.minlength">Email must be of 20 charactor </p>
+       <p ng-show="loginForm.password.$error.required">password is required</p>
+       <p ng-show="loginForm.password.$error.minlength">password must be minlength of 5 charactor </p>
+      </div>
+      <div class="padding">
+        <button class="button button-block button-positive" ng-disabled="loginForm.$invalid" ng-click="login()" >Submit</button>        
+      </div>    
+      </ion-content>
+    </ion-pane>
+  </body>
+</html>

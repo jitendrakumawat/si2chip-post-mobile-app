@@ -1,0 +1,95 @@
+<ion-header-bar class="bar-assertive" style="margin-bottom:20px;">
+ <h1 class="title">Connect to Si2chip</h1>
+ <button class="button" ng-click="refresh()">
+ 	<i class="icon ion-refresh"></i>
+ </button>
+ </ion-header-bar>
+
+<ion-content>
+    <label class = "item item-input item-select item-positive">
+      <div class = "input-label">
+         My Groups
+      </div>
+		
+      <select>
+         <option selected>Home</option>
+         <option >group 2</option>
+         <option> group 3</option>
+      </select>
+   </label>
+<div class="list card">
+
+ <ion-item>
+  
+   <ion-textarea name="post" ng-model="post"></ion-textarea>
+ </ion-item>
+  <div class="padding">
+        <button class="button button-block button-assertive"  ng-click="post()" >Submit</button>        
+      </div>
+</div>
+
+
+ <div class="list card" ng-repeat="Post in arr track by $index">
+
+  <div class="item item-avatar">
+    <img src="img/jitendra.jpg">
+    <h2>{{Post.userId}}</h2>
+    <p>{{Post.postedOn}}</p>
+  </div>
+
+  <div class="item item-body">
+    <img class="full-image" src="img/image.jpg">
+    <p>
+     {{Post.post}}
+    </p>
+    <p>
+      <a href="#" class="subdued">1 Like</a>
+      <a href="#" class="subdued">5 Comments</a>
+    </p>
+  </div>
+
+
+</div>
+ <!-- <div class="list card">
+
+  <div class="item item-avatar">
+    <img src="img/jitendra.jpg">
+    <h2>Marty McFly</h2>
+    <p>November 05, 1955</p>
+  </div>
+
+  <div class="item item-body">
+    <img class="full-image" src="img/image.jpg">
+    <p>
+     {{message2}}
+    </p>
+    <p>
+      <a href="#" class="subdued">1 Like</a>
+      <a href="#" class="subdued">5 Comments</a>
+    </p>
+  </div>
+
+
+</div>
+ <div class="list card">
+
+  <div class="item item-avatar">
+    <img src="img/jitendra.jpg">
+    <h2>Marty McFly</h2>
+    <p>November 05, 1955</p>
+  </div>
+
+  <div class="item item-body">
+    
+    <p>
+     {{message2}}
+    </p>
+    <p>
+      <a href="#" class="subdued">1 Like</a>
+      <a href="#" class="subdued">5 Comments</a>
+    </p>
+  </div>
+
+
+</div> -->
+</ion-content>
