@@ -10,3 +10,18 @@
 	padding-top: 30px;
 
 }
+.icon.ion-refresh{
+	float: right;
+}
+.icon.ion-camera{
+
+font-size:30px !important;
+
+}
+.icon.ion-document-text{
+
+font-size:30px !important;
+}
+.button{
+	padding-left: 20px;
+}

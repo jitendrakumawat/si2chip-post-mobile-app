@@ -68,19 +68,20 @@ angular.module('starter', ['ionic','ngStorage'])
                             
                    //      }
                    //  });
+                    $scope.username="";
+                  $scope.password=""; 
                    $localStorage.currentuser=$scope.username;
-                  $scope.username="";
-                  $scope.password="";      
+                      
                   $state.go('dashboard');
 
      }
 })
-.controller('dashboardController',function($scope,$localStorage){
+.controller('dashboardController',function($scope,$state,$localStorage){
 
-  alert("jkljhklhklh"+$localStorage.currentuser);
-  $scope.refresh=function(){
-    console.log("dsfksd;fjsd'afsdaf");
-    alert("refresh");
+
+  $scope.logout=function(){
+    alert("you are offline");
+    $state.go('login');
   }
   $scope.message1=" This is a 'Facebook' styled Card. The header is created from a Thumbnail List item,\
       the content is from a card-body consisting of an image and paragraph text. The footer\
@@ -90,12 +91,16 @@ angular.module('starter', ['ionic','ngStorage'])
   zxcvzxcvzxcvxzcvzxcvxzcvxczvxczvxczv";
 
 $scope.arr=[
- {post:"ewtgy;kljh';jkhpoy0trjhbpdfjbp['tjhwrphjbrp[hjrtp[hjt [prjb[r0uip0huj0[hjigb[jkf[0hutpjhb[pih9thkjp'hb",postedOn:"18:18:27:251 Thu, 9 Mar 2017",userId:"kumawat.jitendra02@gmail.com"},
+ {post:"This is a 'Facebook' styled Card. The header is created from a Thumbnail List item,\
+      the content is from a card-body consisting of an image and paragraph text. The footer\
+      consists of tabs, icons aligned left, within the card-footer",postedOn:"18:18:27:251 Thu, 9 Mar 2017",userId:"kumawat.jitendra02@gmail.com"},
 {post:"ewtgy;kljh';jkhpoy0trjhbpdfjbp['tjhwrphjbrp[hjrtp[hjt [prjb[r0uip0huj0[hjigb[jkf[0hutpjhb[pih9thkjp'hb",postedOn:"18:18:27:251 Thu, 9 Mar 2017",userId:"kumawat.jitendra02@gmail.com"},
 
 {post:"ewtgy;kljh';jkhpoy0trjhbpdfjbp['tjhwrphjbrp[hjrtp[hjt [prjb[r0uip0huj0[hjigb[jkf[0hutpjhb[pih9thkjp'hb",postedOn:"18:18:27:251 Thu, 9 Mar 2017",userId:"kumawat.jitendra02@gmail.com"},
 
- {post:"ewtgy;kljh';jkhpoy0trjhbpdfjbp['tjhwrphjbrp[hjrtp[hjt [prjb[r0uip0huj0[hjigb[jkf[0hutpjhb[pih9thkjp'hb",postedOn:"18:18:27:251 Thu, 9 Mar 2017",userId:"kumawat.jitendra02@gmail.com"},
+ {post:"This is a 'Facebook' styled Card. The header is created from a Thumbnail List item,\
+      the content is from a card-body consisting of an image and paragraph text. The footer\
+      consists of tabs, icons aligned left, within the card-footer",postedOn:"18:18:27:251 Thu, 9 Mar 2017",userId:"kumawat.jitendra02@gmail.com"},
 
  {post:"ewtgy;kljh';jkhpoy0trjhbpdfjbp['tjhwrphjbrp[hjrtp[hjt [prjb[r0uip0huj0[hjigb[jkf[0hutpjhb[pih9thkjp'hb",postedOn:"18:18:27:251 Thu, 9 Mar 2017",userId:"kumawat.jitendra02@gmail.com"},
 
@@ -108,9 +113,10 @@ $scope.arr=[
  ];
 
 
+$scope.addpost=function(){
+alert($scope.posttext);
 
 
-
-
+};
 
 })
